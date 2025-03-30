@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2025 by Archgirl-reddit (http://jsbin.com/kovoqes/2/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+	<head>
+	  <title>r/PortugalLaFora - Salário Emigrante</title>
+          <link rel="stylesheet" type="text/css" href="https://datatables.net/release-datatables/media/css/jquery.dataTables.css">
+          <link rel="stylesheet" type="text/css" href="https://datatables.net/release-datatables/extensions/FixedHeader/css/fixedHeader.dataTables.css">
+      	  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css">
+          <link rel="stylesheet" type="text/css" href="https://datatables.net/release-datatables/extensions/Buttons/css/buttons.dataTables.css">
+          <style>
+           body {
+            font-family: "Sofia", sans-serif;
+           }
+           </style>
+</head>
+	<body style="padding: 20px 40px;">
+	  <h1>Salário Emigrante</h1>
+		<table id="example" class="display" style="width:100%">
+			<thead>
+				<tr>
+					<th>Username do Reddit</th>
+					<th>Idade</th>
+					<th>Formação académica</th>
+					<th>Experiência  profissional</th>
+					<th>Estado civil</th>
+					<th>Número de dependentes</th>
+					<th>Setor/Indústria</th>
+					<th>País</th>
+					<th>Cidade</th>
+					<th>Número de trabalhadores</th>
+					<th>Multinacional</th>
+					<th>Cargo Atual</th>
+					<th>Anos na empresa atual</th>
+					<th>Horas de trabalho semanais contratadas</th>
+					<th>Horas de trabalho semanais efetivas</th>
+					<th>Tipo de horário</th>
+					<th>Serviço de permanência 24h</th>
+					<th>Dias de férias por ano</th>
+					<th>Salário bruto anual</th>
+					<th>Salário líquido mensal</th>
+					<th>Compensações líquidas mensais</th>
+					<th>13°/14° mês</th>
+					<th>Transporte da empresa</th>
+					<th>Seguros por parte do empregador</th>
+					<th>Outros benefícios</th>
+					<th>Salário adaptado ao custo de vida local</th>
+					<th>Modelo de trabalho</th>
+					<th>Distância casa-trabalho</th>
+					<th>Meio de transporte utilizado</th>
+					<th>Deslocação casa-trabalho é compensada</th>
+					<th>Dias de teletrabalho por semana</th>
+					<th>Com que facilidade pode planear um dia de folga?</th>
+					<th>O emprego é stressante?'</th>		
+					<th>Possibilidade de formação?'</th>
+					<th>É responsável por uma equipa e/ou projectos?</th>
+					<!-- Add more columns as needed based on your JSON structure-->
+				</tr>
+			</thead>
+		</table>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.1.js"></script>
+	  <script type="text/javascript" src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+
+    <script type="text/javascript" src="https://datatables.net/release-datatables/extensions/FixedHeader/js/dataTables.fixedHeader.js"></script>
+    <script type="text/javascript" src="https://datatables.net/release-datatables/media/js/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="https://datatables.net/release-datatables/extensions/Buttons/js/dataTables.buttons.js"></script>
+    <script type="text/javascript" src="https://datatables.net/release-datatables/extensions/Buttons/js/buttons.colVis.js"></script>
+<script id="jsbin-javascript">
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example thead tr').clone(true).appendTo( '#example thead' );
+    $('#example thead tr:eq(1) th').each( function (i) {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+ 
+        $( 'input', this ).on( 'keyup change', function () {
+            if ( table.column(i).search() !== this.value ) {
+                table
+                    .column(i)
+                    .search( this.value )
+                    .draw();
+            }
+        } );
+    } ); 
+  var table = $('#example').DataTable( {
+			ajax: 'https://script.googleusercontent.com/macros/echo?user_content_key=AehSKLjULlAQY62SFd7HreExZbRE4YM6DRDZzlb5_0H501Hv1ETYwf9sX0-03cSKv8XuW6JDNiVFKy-amh2uHY24I2I-lnJjCx5oeWUhDs08ZUvWoMuRUsChOHRSPiEvLD0xXahtPk9mDuVQtwQmWfYgG_g-ECfePJ0M681fWE27p2PFKhmPJ6p3GXz7F-k7Pk8TjOzZH7_hPl5XLYC7uOxW3TxRLL8GPxivNapDl1lZw_xZrVIzwaJ1C4EBTtevfEQpOeDUm32hN8fmY1FcN4yn-ZdlD5NKpRVLIjCOqjLn&lib=MALFVm6WWoZ7vxArQCXq2PAU7rRJtMJYk',
+			orderCellsTop: true,
+            fixedHeader: true,
+            dom: 'Bfrtip',
+        buttons: [
+            'colvis'
+        ],
+             columns: [
+				{ data: 'id2' },
+				{ data: 'id3' },
+				{ data: 'id4' },
+				{ data: 'id5' },
+				{ data: 'id6' },
+				{ data: 'id7' },
+				{ data: 'id8' },
+				{ data: 'id9' },
+				{ data: 'id10' },
+				{ data: 'id11' },
+				{ data: 'id12' },
+				{ data: 'id13' },
+				{ data: 'id14' },
+				{ data: 'id15' },
+				{ data: 'id16' },
+				{ data: 'id17' },
+				{ data: 'id18' },
+				{ data: 'id19' },
+				{ data: 'id20' },
+				{ data: 'id21' },
+				{ data: 'id22' },
+				{ data: 'id23' },
+				{ data: 'id24' },
+				{ data: 'id25' },
+				{ data: 'id26' },
+				{ data: 'id27' },
+				{ data: 'id28' },
+				{ data: 'id29' },
+				{ data: 'id30' },
+				{ data: 'id31' },
+				{ data: 'id32' },
+				{ data: 'id33' },
+				{ data: 'id34' },
+				{ data: 'id35' },
+ 				{ data: 'id36' },
+			]
+		});
+} );
+</script>
+</body>
+</html>
+
+create Index.html for my GitHub Pages
